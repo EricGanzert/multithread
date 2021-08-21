@@ -3,12 +3,22 @@
 #include <iostream>
 #define NUM_THREADS 5
 
+static pthread_mutex_t func_mutex = PTHREAD_MUTEX_INITIALIZER;
+
 using namespace std;
+
+void protected_cout(string message)
+{
+    pthread_mutex_lock(&func_mutex);
+    cout << message << endl;
+    pthread_mutex_unlock(&func_mutex);
+}
 
 void* worker(void* arg)
 {
     int value = *((int*) arg);
-    (void)value;
+    string message = "thread value " + to_string(value);
+    protected_cout(message);
     return 0;
 }
 
@@ -21,13 +31,15 @@ int main(int /* argc */, char** /* argv */) {
     {
         thread_args[i] = i;
         result_code = pthread_create(&threads[i], 0, worker, (void*) &thread_args[i]);
-        cout << "thread " << i << (!result_code ? " launched successfully" : " failed to launch") << endl;
+        string message = "thread " + to_string(i) + (!result_code ? " launched successfully" : " failed to launch");
+        protected_cout(message);
     }
 
     for (int i = 0; i < NUM_THREADS; ++i)
     {
         result_code = pthread_join(threads[i], 0);
-        cout << "thread " << i << (!result_code ? " joined successfully" : " failed to join") << endl;
+        string message = "thread " + to_string(i) + (!result_code ? " joined successfully" : " failed to join");
+        protected_cout(message);
     }
 
     exit(0);
