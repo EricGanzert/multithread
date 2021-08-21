@@ -7,3 +7,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_options(-Wall -Wextra -pedantic -Werror)
 
 add_subdirectory(chapter1)
+add_subdirectory(chapter3)
