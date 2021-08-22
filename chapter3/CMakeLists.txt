@@ -1,3 +1,5 @@
 add_executable(pthread_example pthread_example.cpp)
-
 target_link_libraries(pthread_example PRIVATE pthread)
+
+add_executable(pthread_cv_example pthread_cv_example.cpp)
+target_link_libraries(pthread_cv_example PRIVATE pthread)
