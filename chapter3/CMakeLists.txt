@@ -3,3 +3,6 @@ target_link_libraries(pthread_example PRIVATE pthread)
 
 add_executable(pthread_cv_example pthread_cv_example.cpp)
 target_link_libraries(pthread_cv_example PRIVATE pthread)
+
+add_executable(pthread_tls_example pthread_tls_example.cpp)
+target_link_libraries(pthread_tls_example PRIVATE pthread)
