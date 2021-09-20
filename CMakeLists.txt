@@ -8,3 +8,4 @@ add_compile_options(-Wall -Wextra -pedantic -Werror)
 
 add_subdirectory(chapter1)
 add_subdirectory(chapter3)
+add_subdirectory(chapter4)
