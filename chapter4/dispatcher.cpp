@@ -35,8 +35,8 @@ bool Dispatcher::stop()
     for (auto j=0ul; j<threads.size(); j++)
     {
         threads[j]->join();
+        cout << "Joined thread" << endl;
     }
-    cout << "Joined threads" << endl;
     return true;
 }
 
