@@ -12,3 +12,8 @@ add_executable(sleeping
     sleeping.cpp
 )
 target_link_libraries(sleeping PRIVATE pthread)
+
+add_executable(swap
+    swap.cpp
+)
+target_link_libraries(swap PRIVATE pthread)
