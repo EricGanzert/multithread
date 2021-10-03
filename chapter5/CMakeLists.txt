@@ -17,3 +17,13 @@ add_executable(swap
     swap.cpp
 )
 target_link_libraries(swap PRIVATE pthread)
+
+add_executable(simple_mutex
+    simple_mutex.cpp
+)
+target_link_libraries(simple_mutex PRIVATE pthread)
+
+add_executable(non_blocking_locking
+    non_blocking_locking.cpp
+)
+target_link_libraries(non_blocking_locking PRIVATE pthread)
