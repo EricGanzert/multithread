@@ -27,3 +27,8 @@ add_executable(non_blocking_locking
     non_blocking_locking.cpp
 )
 target_link_libraries(non_blocking_locking PRIVATE pthread)
+
+add_executable(lock_guard
+    lock_guard.cpp
+)
+target_link_libraries(lock_guard PRIVATE pthread)
