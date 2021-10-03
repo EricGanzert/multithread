@@ -37,3 +37,8 @@ add_executable(basic_future
     basic_future.cpp
 )
 target_link_libraries(basic_future PRIVATE pthread)
+
+add_executable(basic_promise
+    basic_promise.cpp
+)
+target_link_libraries(basic_promise PRIVATE pthread)
