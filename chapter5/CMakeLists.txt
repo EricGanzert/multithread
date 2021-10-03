@@ -32,3 +32,8 @@ add_executable(lock_guard
     lock_guard.cpp
 )
 target_link_libraries(lock_guard PRIVATE pthread)
+
+add_executable(basic_future
+    basic_future.cpp
+)
+target_link_libraries(basic_future PRIVATE pthread)
