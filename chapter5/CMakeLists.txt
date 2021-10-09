@@ -42,3 +42,8 @@ add_executable(basic_promise
     basic_promise.cpp
 )
 target_link_libraries(basic_promise PRIVATE pthread)
+
+add_executable(packaged_task
+    packaged_task.cpp
+)
+target_link_libraries(packaged_task PRIVATE pthread)
