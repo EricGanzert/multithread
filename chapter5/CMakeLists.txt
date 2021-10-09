@@ -47,3 +47,8 @@ add_executable(packaged_task
     packaged_task.cpp
 )
 target_link_libraries(packaged_task PRIVATE pthread)
+
+add_executable(async
+    async.cpp
+)
+target_link_libraries(async PRIVATE pthread)
